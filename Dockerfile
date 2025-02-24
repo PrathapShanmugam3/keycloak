@@ -8,5 +8,5 @@ ENV KEYCLOAK_ADMIN_PASSWORD=admin
 EXPOSE 10000
 
 # Start Keycloak in dev mode with custom memory limits and port binding
-ENTRYPOINT [ "keycloak", "start-dev", "--http-port=10000", "-Xmx512m", "-Xms256m" ]
+ENTRYPOINT [ "keycloak", "start-dev", "--http-port=10000" ]
 

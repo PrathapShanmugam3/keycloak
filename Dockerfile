@@ -5,7 +5,7 @@ ENV KEYCLOAK_ADMIN_PASSWORD=admin
 
 # Database configuration
 ENV KC_DB=postgres
-ENV KC_DB_URL=jdbc:postgresql://development-datacode.j.aivencloud.com:15555/defaultdb?sslmode=require
+ENV KC_DB_URL=jdbc:postgresql://development-datacode.j.aivencloud.com:15555/defaultdb
 ENV KC_DB_USERNAME=avnadmin
 ENV KC_DB_PASSWORD=AVNS_KDMQeZDAKw2I13Rr776
 

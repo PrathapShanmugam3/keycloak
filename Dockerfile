@@ -22,7 +22,7 @@ COPY --from=builder /opt/keycloak/ /opt/keycloak/
 
 # Aiven PostgreSQL configuration
 ENV KC_DB=postgres
-ENV KC_DB_URL=jdbc:postgresql://development-datacode.j.aivencloud.com:15555/defaultdb?sslmode=require
+ENV KC_DB_URL=postgres://avnadmin:AVNS_KDMQeZDAKw2I13Rr776@development-datacode.j.aivencloud.com:15555/defaultdb?sslmode=require
 ENV KC_DB_USERNAME=avnadmin
 ENV KC_DB_PASSWORD=AVNS_KDMQeZDAKw2I13Rr776
 

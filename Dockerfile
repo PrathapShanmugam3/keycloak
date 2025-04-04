@@ -3,20 +3,26 @@ FROM quay.io/keycloak/keycloak:21.1.1
 ENV KEYCLOAK_ADMIN=admin
 ENV KEYCLOAK_ADMIN_PASSWORD=admin
 
-
+# Database configuration
 ENV KC_DB=postgres
 ENV KC_DB_URL=jdbc:postgresql://development-datacode.j.aivencloud.com:15555/defaultdb?sslmode=require
 ENV KC_DB_USERNAME=avnadmin
 ENV KC_DB_PASSWORD=AVNS_KDMQeZDAKw2I13Rr776
 
+# Connection pool settings
+ENV KC_DB_POOL_INITIAL_SIZE=5
+ENV KC_DB_POOL_MIN_SIZE=5
+ENV KC_DB_POOL_MAX_SIZE=20
+ENV KC_DB_POOL_MAX_WAIT=30000
+
+# Enable transaction recovery
 ENV QUARKUS_TRANSACTION_MANAGER_ENABLE_RECOVERY=true
 
+# Health checks
+ENV KC_HEALTH_ENABLED=true
 
-# Expose that port (not strictly needed for Render, but good for local dev)
 EXPOSE 8080
 
-# Use the new Keycloak start script
 ENTRYPOINT ["/opt/keycloak/bin/kc.sh"]
-CMD ["start-dev"]
-
+CMD ["start-dev", "--verbose"]  # Added --verbose for more detailed logs
 
